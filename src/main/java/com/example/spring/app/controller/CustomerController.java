@@ -1,4 +1,4 @@
-package com.example.k8s;
+package com.example.spring.app.controller;
 
 
 import org.springframework.web.bind.annotation.*;
