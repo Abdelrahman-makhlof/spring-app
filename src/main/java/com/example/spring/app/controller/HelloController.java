@@ -8,13 +8,22 @@ import java.net.UnknownHostException;
 
 @RestController
 @RequestMapping("api/v1")
-public class CustomerController {
+public class HelloController {
     @GetMapping
     public String hello() throws UnknownHostException {
         InetAddress localHost = InetAddress.getLocalHost();
 
         // Get the host name
         String hostName = localHost.getHostName();
-        return "Hello i am " + hostName + " :)";
+        return "Hello, from " + hostName + " :)";
+    }
+
+    @GetMapping("/{name}")
+    public String hello(@PathVariable String name) throws UnknownHostException {
+        InetAddress localHost = InetAddress.getLocalHost();
+
+        // Get the host name
+        String hostName = localHost.getHostName();
+        return "Hello "+name +",\nfrom " + hostName + " :)";
     }
 }
