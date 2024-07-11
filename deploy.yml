@@ -1,7 +1,7 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: my-java-springboot
+  name: my-springboot-app
 spec:
   replicas: 3
   selector:
@@ -13,7 +13,7 @@ spec:
         app: java-springboot-app
     spec:
       containers:
-        - name: my-java-springboot
+        - name: my-springboot-app
           image: spring-app:v1
           ports:
             - name: http
@@ -27,7 +27,7 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: my-java-springboot-svc
+  name: my-springboot-app-svc
 spec:
   ports:
     - name: http-9090
