@@ -7,7 +7,7 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 
 @RestController
-@RequestMapping("api/v1")
+@RequestMapping("api/v1/hello")
 public class HelloController {
     @GetMapping
     public String hello() throws UnknownHostException {
