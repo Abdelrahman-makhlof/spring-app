@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: spring-app-svc
+spec:
+  type: NodePort
+  ports:
+    - name: http-8080
+      port: 8080
+      protocol: TCP
+      nodePort: 30003
+  selector:
+    app: java-springboot-app

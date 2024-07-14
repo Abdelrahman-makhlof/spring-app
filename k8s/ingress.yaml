@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-spring-app-ingress
+spec:
+  rules:
+    - host: spring.app.local    # Change to your desired hostname
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: spring-app-svc
+                port:
+                  number: 8088
